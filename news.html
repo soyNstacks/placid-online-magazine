@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="description" content="this is an online responsive magazine for slow living content"> 
+    <meta name="keywords" content="slow living, simple living, lifestyle, magazine, fashion, food, health, home decor, news, environment, singapore"> 
+    <meta name="author" content="placid"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="Main StyleSheet" type=text/css href="/StyleSheet/main.css">
+    <link rel="Icons StyleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="Font StyleSheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap">
+</head>
+
+<body>
+
+<!---------------- back to top of page button ----------------> 
+    <div class="topPage">
+        <button id="topPagebtn" title="top of page" onclick="topOfPage()"><i class="arrow up"></i></button>
+        <div class="scrollDown"></div>
+        <div class="topButton"></div>
+    </div>
+ 
+<!------------------------ navigation ------------------------>
+    <nav> 
+<!---------------- hamburger menu ---------------->
+        <input type="checkbox" id="menuNav"/> 
+            <div id="navigation">
+                <ul>
+                    <li>
+                        <label for="menuNav">               
+                            <span id="menuIcon" onclick="hamburgToggle()">
+                            <div class="barOne"></div> 
+                            <div class="barTwo"></div>
+                            <div class="barThree"></div>
+                            </span>
+                        </label>
+                        
+                        <div id="menulist">
+                            <ul>
+                                <li><a class="menulinks" href="/index.html">HOME</a></li>
+                                <li><a class="menulinks" href="/art.html">ART</a></li>
+                                <li><a class="menulinks" href="/environment.html">ENVIRONMENT</a></li>
+                                <li><a class="menulinks" href="/food.html">FOOD</a></li>
+                                <li><a class="menulinks" href="/home_living.html">HOME &amp; LIVING</a></li>
+                                <li><a class="menulinks" href="/news.html">NEWS</a></li> 
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+<!----------- horizontal navigation bar ------------>        
+        <div id="main">
+            <ul class="topnav">
+                
+                <!---- inc/dec of font size -----> 
+                <!-- https://www.coursera.org/learn/uol-web-development/lecture/SJumr/7-3-5-what-can-we-do-with-these-elements-when-we-have-them : adaption of javascript function and HTML with adjustments made to CSS -->
+                <li id="pickFontsize">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>       
+                    <span class="large" id="largeA">A</span>
+                </li>
+                
+                <!-- https://www.w3resource.com/ : adoption with changes made to input field, checkboxes, validating input fields -->
+                <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp : adaption with changes made to modal function of form, closing of form with 'X' -->
+                <div id="main-subscribeForm">
+                    <li>
+                        <button class="subscribe" onclick="document.getElementById('subForm').style.display='block'">SUBSCRIBE</button>
+                    </li>
+                    
+                    <div id="subForm" class="modalForm">
+                        <span onclick="document.getElementById('subForm').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        
+                        <form class="modalForm-content" >
+                            <div class="subForm-container">
+                                <h1>SUBSCRIPTION FORM</h1>
+                                <p>(* Compulsory fields)</p>
+                                <hr>
+
+                                <div class="title">Title:  
+                                    <input type="radio" name = "title" class="personalInfo" value="Mr" checked="checked"> Mr
+                                    <input type="radio" name = "title" class="title" value="Mrs"> Mrs
+                                    <input type="radio" name = "title" class="title" value="Mdm"> Mdm
+                                    <input type="radio" name = "title" class="title" value="Ms"> Ms
+                                    <input type="radio" name = "title" class="title" value="Prefer not to say"> Prefer not to say
+                                </div>
+                                <div class="inputfields">
+                                    <label for="first-name"><b>First Name: </b></label>
+                                        <input type="text" id ="firstName" placeholder="Enter First Name" name="first-name" required>
+
+                                    <label for="last-name"><b>Last Name: </b></label>
+                                        <input type="text" id ="lastName" placeholder="Enter Last Name" name="last-name" required>      
+
+                                    <label for="email"><b>Email: </b></label>
+                                        <input type="text" id ="email" placeholder="Enter Email" name="email" required>
+                                </div>
+
+                                <div class="chooseTopic">
+                                    <p id="checkBoxHeader">
+                                        *Topic of interest (you may select more than one) :  
+                                    </p>
+
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "art"> Art <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Environment"> Environment <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Health Living"> Health &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Home Living"> Home &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Slow News"> News <br>
+                                </div>
+
+                                    <p id="comboBoxHeader">
+                                    *Receive updates via email: 
+
+                                        <select name="frequency-period" id="frequency-period">
+                                            <option value=""></option>
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="Bi-Annually">Bi-Annually</option>
+                                        </select>
+
+                                    </p>
+
+                                <div class="endOfForm-buttons">
+                                    <div class="button-grid">
+                                        <button class="cancelbtn" type="button" onclick="document.getElementById('subForm').style.display='none'">Cancel</button>
+                                
+                                        <input class="clearForm" type="reset" value="Reset">
+                                    </div>
+                                    
+                                    <button class="submitbtn" type="button" onClick="check_formData()"> Submit </button>
+                                </div>
+                        </div>
+                      </form>
+                </div>
+            </div>
+                
+                <li><a class ="mainCollapse" href="/art.html">ART</a></li>
+                <li><a class ="mainCollapse" href="/environment.html">ENVIRONMENT</a></li>
+                <li><a class ="mainCollapse" href="/food.html">FOOD</a></li>
+                <li><a class ="mainCollapse" href="/home_living.html">HOME &amp; LIVING</a></li>
+                <li><a class ="mainCollapse" href="/news.html">NEWS</a></li>
+                <li><a class="report" href="/report.html">REPORT</a></li>
+                <li><a class ="mainCollapse" href="/index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-------------------- placid logo banner --------------------> 
+    <div id="banner">
+        <a href="/index.html"><img class="logo" src="/Images/logo.png"></a>
+    </div>
+
+    <br>
+
+    <!-------------------- news page -------------------->
+    <div id="newsPage"> 
+        <article>
+            <h1>The Pandemic</h1>
+            <div class="article-grid-container">
+                <div class="headerImage">
+                    <img src="/Images/news--/news-header.jpg" class="article-head-img" alt="news">
+                </div>   
+                
+                <div class="one">
+                    <div class="article-text">
+                        <section>
+                            <p>The Covid-19, or Coronavirus, was the most concentrated situation in 2020. It was a damnation of its own that caused drastic impact and changes on humans all around the world. The culprit, SARS-CoV-2 (Severe Acute Respiratory Syndrome Coronavirus 2), was first identified in Wuhan, China back in December 2019. The outbreak was officially decalred by World Healthy Organisation a month later. 
+                            </p>
+                        </section>
+                    </div>
+                </div>
+                
+                <div class="two">
+                    <div class="article-image">
+                        <div class="imgOne">
+                            <img src="/Images/news--/news-1.jpg" alt="masking up" >
+                        </div>
+                        <div class="imgTwo">
+                            <img src="/Images/news--/news-2.jpg" alt="mask">
+                        </div>
+                    </div>
+                    <div class="article-text">
+                        <section>
+                            <p>The virus mainly spreads through the air when people are of close proximity and may also spread via contaminated surfaces, staying up to days. Symptoms of COVID-19 include loss of smell and taste, nasal congestion, sore throat, fever and many more. Individuals whho contracted the disease may have different symptoms, or be diagnosed asymptomatic - no noticable signs of infection. While most tend to develop mild to moderate symptoms, asymptomatic carriers are usually not tested and would likely spread the virus unknowingly. Today, a majority of countries have passed a bill to mandate wearing masks compulsory. According to latest studies,  a new infection occurs when virus-containing particles exhaled by an infected person, either respiratory droplets or aerosols, get into the mouth, nose, or eyes of other people who are in close contact with the infected person.
+                            </p>
+                                <p>Since then, it is still unknown where exactly the outbreak originated from. However, first batch of cases were attributed to people who frequented a Seafood market in Wuhan, China. With the first confirmed death in said location on 1st February 2020, total counts do not include the deaths of people who were not tested for the virus. With little resources and knowledge of Covid-19, many countries opted to provide tests and treatments only to individuals who are in dire condition. 
+                                </p>
+                        </section>
+                    </div>
+                </div>
+                
+                <!-- https://www.w3schools.com/howto/howto_css_timeline.asp : adaption of timeline HTML and CSS, changes made to scroll, content, timeline overall appearance, relevant codes in div, CSS -->
+                <div class="timelineIns">
+                    <p>Scroll for more</p>
+                    <i class="arrow left"></i>
+                    <i class="arrow left"></i>
+                </div>
+                
+                <div class="bar"></div>
+                    <div class="timeline">
+                        <div class="content">
+                            <h1>December 2019</h1>
+                            <p>A pneumonia cluster of unknown cause was observed and a test report addressed to Wuhan Central Hospital stated that there was an erroneous positive result for SARS. The next day, the Wuhan Municipal Health Commission made the first public announcement of a pneumonia outbreak of unknown cause, confirming 27 cases. An investigation was launched by WHO.
+                            </p>
+                        </div>
+                        
+                        <div class="content">
+                            <h1>January 2020 </h1>
+                            <p>the virus spread to other Chinese provinces and rapidly to the rest of the world, including Italy, Iran, South Korea, and Japan. On 30th January 2020, there were 7,818 confirmed cases across 19 countries.
+                            </p>                          
+                        </div>
+                        
+                        <div class="content">
+                            <h1>March 2020</h1>
+                            <p>Europe was deemed the active centre of the pandemic, as Italy overtook China as the country with the most reported deaths. United States had the highest number of confirmed cases in the world. Research on coronavirus genomes indicates the majority of COVID-19 cases in New York came from European travellers. Retesting of prior samples found a person in France who had the virus on 27th December 2019.
+                            </p>
+                        </div>
+                        
+                        <div class="content">
+                            <h1>November 2020</h1>
+                            <p>An outbreak of a unique mutated variant being transmitted to humans from minks in Denmark was reported. WHO states that the variant had a combination of mutations or changes that have not been previously observed. Denmark, the world's largest producer of mink fur – was to cull its mink population by as many as 17 million.</p>
+                                <p>
+                                Pfizer released trial results for a candidate vaccine, showing that it is 90% effective against the virus.
+                                </p>
+                        </div>
+                        
+                        <div class="content">
+                            <h1>December 2020</h1>
+                            <p>New variant discovered in South East of England. Variant of Concern 202012/01 showed changes to the spike protein which could make the virus more infectious. 1,108 cases identified and many countries halted all flights from the UK.
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="three">
+                        <div class="article-image">
+                            <img src="/Images/news--/news-3.jpg" alt="lockdown">
+                        </div>
+                        <div class="article-text">
+                            <section>
+                                <p>To learn more about COVID-19, visit 
+                                    <a href="https://www.who.int/health-topics/coronavirus#tab=tab_1">World Health Organization (WHO) </a>.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                
+                <br>
+                    
+                    <div class="articleAuthor">
+                        <p>Written by Tan</p>
+                            <p>Sources: 
+                                <a href="https://en.wikipedia.org/wiki/COVID-19_pandemic">Wikepedia</a>, 
+                                <a href="https://www.who.int/health-topics/coronavirus#tab=tab_1">WHO</a>
+                            </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <br>
+        
+<!---------------------- category ----------------------> 
+    <section id="categories">
+    <h1 class="sectionTitle">CATEGORY</h1>
+        <div class="catGrid">
+            <a href="art.html">
+                <div class="catTitle">ART</div>
+            </a>
+            <a href="environment.html">
+                <div class="catTitle">ENVIRONMENT</div>
+            </a>
+            <a href="food.html">
+                <div class="catTitle">FOOD</div>
+            </a>
+            <a href="home_living.html">
+                <div class="catTitle">HOME / LIVING</div>
+            </a>
+            <a href="news.html">
+                <div class="catTitle">NEWS</div>
+            </a>
+        </div>
+    </section>
+    
+    <br>
+    
+   <!------------------------ footer ------------------------> 
+    <section>
+        <footer>
+            <div class="footer-grid-container">
+                <div class="contacts" id="info">
+                    <div id="hotline">
+                        <h1>General Enquiries:</h1>
+                            <p>Hotline: 1800 568 1326</p>
+                    </div>
+
+                    <div id="email">
+                        <p>Email: enquiries@placidmagazine.com</p>
+                    </div> 
+                </div>
+
+                <div class="about">
+                    <h1>Who are we?</h1>
+                    <p>Placid is an independent magazine created to advocate for the theme of Slow Living, with a mission to add a touch of calm to individuals who are struck by the effects of world issues amidst the already hectic life. At the same time, the magazine also hopes to contribute to efforts against the deteriorating health of Gaia.</p>
+                        <p>Slow Living, like its name, is a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace.
+                        We hope this online magazine would help broaden perspectives and lend a helping hand amidst the global pandemic.</p>
+                </div>
+
+                <!-- https://www.w3schools.com/howto/howto_css_social_media_buttons.asp : use of social media icons, changes made to adopt relevant hyperlinks -->
+                <div class="contacts" id="socials">
+                    <h1>Follow us:</h1>
+                    <a href="https://www.instagram.com/placid_magazine/?igshid=1qcde3koj4ra9" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/placid_magazine?s=21" class="fa fa-twitter"></a>
+                </div>
+            </div>
+
+            <div id="footerLogo">
+                <a href="index.html">
+                <img src="/Images/logo.png">
+                </a>
+            </div>
+        </footer>
+    </section>
+    
+</body>   
+    <script src="/Script/script.js"></script>
+</html>

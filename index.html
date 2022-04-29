@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="description" content="this is an online responsive magazine for slow living content"> 
+    <meta name="keywords" content="slow living, simple living, lifestyle, magazine, fashion, food, health, home decor, news, environment, singapore"> 
+    <meta name="author" content="placid"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="Main StyleSheet" href="/StyleSheet/main.css"> 
+    <link rel="Icons stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="Font StyleSheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap"> 
+    <link rel="Bootstrap StyleSheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>     
+    
+<!--    internal style for index.html, to prevent clash of css with carousel bootstrap   -->
+    <style>
+        
+        nav {
+            margin: 8px;
+        }
+            
+        #menulist li, a {
+            padding: 10px 0px 10px 0px;
+            text-decoration: none;
+            color: black;
+        }
+            
+        #menulist li, a:hover {
+            color: black;
+        }
+        
+        @media only screen and (max-width: 750px) {
+            
+            html {
+                font-size: 14px;
+                font-family: 'Raleway', sans-serif;
+            }
+            
+            body {
+                font-size: 14px;
+                font-family: 'Raleway', sans-serif;
+                color: black;
+                overflow: auto;
+                margin: 3px;
+            }
+    
+            footer {
+                font-size: 90%;
+                font-family: 'Raleway', sans-serif;
+                color: black;
+                margin-bottom: 20px;
+                background: #d6c2c2;
+                width: 100%;
+                position: relative;
+                clear: both;
+                bottom: 10px;
+
+            }
+            
+            nav {
+                margin: 8px;
+            }
+            
+        }
+        
+        @media only screen and (min-width: 751px) and (max-width: 1010px) {
+    
+            html {
+                font-size: 16px;
+        
+            }
+    
+            body {
+
+                font-size: 14px;
+                font-family: 'Raleway', sans-serif;
+                color: black;
+                overflow: auto;
+                margin: 3px;
+            }
+
+            footer {
+                font-size: 90%;
+                font-family: 'Raleway', sans-serif;
+                color: black;
+                margin-bottom: 20px;
+                background: #d6c2c2;
+                width: 100%;
+                position: relative;
+                clear: both;
+                bottom: 10px;
+
+            }
+
+            nav {
+                margin: 8px;
+            }
+            
+        }
+            
+        @media only screen and (min-width: 1011px) {
+
+            html {
+                font-size: 18px;
+
+            }
+
+            body {
+                font-size: 16px;
+                font-size: 16px;
+                font-family: 'Raleway', sans-serif;
+                color: black;
+                overflow: auto;
+                margin: 5px;
+            }
+
+            footer {
+                font-size: 90%;
+                font-family: 'Raleway', sans-serif;
+                color: black;
+                margin-bottom: 20px;
+                background: #d6c2c2;
+                width: 100%;
+                position: relative;
+                clear: both;
+                bottom: 10px;
+            }
+
+        }
+        
+    </style>      
+</head>
+    
+<body>
+<!--
+    1 <nav>
+    2 <"featured">
+    3 <"imageFiller">
+    4 <"categories">
+    5 <footer>
+-->
+    
+<!---------------- back to top of page button ----------------> 
+    <div class="topPage">
+        <button id="topPagebtn" title="top of page" onclick="topOfPage()"><i class="arrow up"></i></button>
+        <div class="scrollDown"></div>
+        <div class="topButton"></div>
+    </div>
+ 
+<!------------------------ navigation ------------------------>
+    <nav> 
+<!---------------- hamburger menu ---------------->
+<!--    https://www.w3schools.com/howto/howto_css_menu_icon.asp : closing the menu with 'X'  -->
+        <input type="checkbox" id="menuNav"/> 
+            <div id="navigation">
+                <ul>
+                    <li>
+                        <label for="menuNav">               
+                            <span id="menuIcon" onclick="hamburgToggle()">
+                            <div class="barOne"></div> 
+                            <div class="barTwo"></div>
+                            <div class="barThree"></div>
+                            </span>
+                        </label>
+                        
+                        <div id="menulist">
+                            <ul>
+                                <li><a class="menulinks" href="/index.html">HOME</a></li>
+                                <li><a class="menulinks" href="/art.html">ART</a></li>
+                                <li><a class="menulinks" href="/environment.html">ENVIRONMENT</a></li>
+                                <li><a class="menulinks" href="/food.html">FOOD</a></li>
+                                <li><a class="menulinks" href="/home_living.html">HOME &amp; LIVING</a></li>
+                                <li><a class="menulinks" href="/news.html">NEWS</a></li> 
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+<!----------- horizontal navigation bar ------------>        
+        <div id="main">
+            <ul class="topnav">
+                
+                <!----inc/dec of font size -----> 
+                <!-- https://www.coursera.org/learn/uol-web-development/lecture/SJumr/7-3-5-what-can-we-do-with-these-elements-when-we-have-them : adaption of javascript function and HTML with adjustments made to CSS -->
+                <li id="pickFontsize">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>       
+                    <span class="large" id="largeA">A</span>
+                </li>
+                
+                <!-- https://www.w3resource.com/ : adoption with changes made to input field, checkboxes, validating input fields -->
+                <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp : adaption with changes made to modal function of form, closing of form with 'X' -->
+                <div id="main-subscribeForm">
+                    <li>
+                        <button class="subscribe" onclick="document.getElementById('subForm').style.display='block'">SUBSCRIBE</button>
+                    </li>
+                    
+                    <div id="subForm" class="modalForm">
+                        <span onclick="document.getElementById('subForm').style.display='none'" class="close" title="Close Modal">&times;  
+                        </span>
+                        
+                        <form class="modalForm-content" >
+                            <div class="subForm-container">
+                                <h1>SUBSCRIPTION FORM</h1>
+                                <p>(* Compulsory fields)</p>
+                                <hr>
+
+                                <div class="title">Title:  
+                                    <input type="radio" name = "title" class="personalInfo" value="Mr" checked="checked"> Mr
+                                    <input type="radio" name = "title" class="title" value="Mrs"> Mrs
+                                    <input type="radio" name = "title" class="title" value="Mdm"> Mdm
+                                    <input type="radio" name = "title" class="title" value="Ms"> Ms
+                                    <input type="radio" name = "title" class="title" value="Prefer not to say"> Prefer not to say
+                                </div>
+                                <div class="inputfields">
+                                    <label for="first-name"><b>First Name: </b></label>
+                                        <input type="text" id ="firstName" placeholder="Enter First Name" name="first-name" required>
+
+                                    <label for="last-name"><b>Last Name: </b></label>
+                                        <input type="text" id ="lastName" placeholder="Enter Last Name" name="last-name" required>      
+
+                                    <label for="email"><b>Email: </b></label>
+                                        <input type="text" id ="email" placeholder="Enter Email" name="email" required>
+                                </div>
+
+                                <div class="chooseTopic">
+                                    <p id="checkBoxHeader">
+                                        *Topic of interest (you may select more than one) :  
+                                    </p>
+
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "art"> Art <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Environment"> Environment <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Health Living"> Health &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Home Living"> Home &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Slow News"> News <br>
+                                </div>
+
+                                    <p id="comboBoxHeader">
+                                    *Receive updates via email: 
+
+                                        <select name="frequency-period" id="frequency-period">
+                                            <option value=""></option>
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="Bi-Annually">Bi-Annually</option>
+                                        </select>
+
+                                    </p>
+
+                                <div class="endOfForm-buttons">
+                                    <div class="button-grid">
+                                        <button class="cancelbtn" type="button" onclick="document.getElementById('subForm').style.display='none'">Cancel</button>
+                                
+                                        <input class="clearForm" type="reset" value="Reset">
+                                    </div>
+                                    
+                                    <button class="submitbtn" type="button" onClick="check_formData()"> Submit </button>
+                                </div>
+
+                        </div>
+                      </form>
+                </div>
+            </div>
+                
+                <li><a class ="mainCollapse" href="/art.html">ART</a></li>
+                <li><a class ="mainCollapse" href="/environment.html">ENVIRONMENT</a></li>
+                <li><a class ="mainCollapse" href="/food.html">FOOD</a></li>
+                <li><a class ="mainCollapse" href="/home_living.html">HOME &amp; LIVING</a></li>
+                <li><a class ="mainCollapse" href="/news.html">NEWS</a></li>
+                <li><a class ="mainCollapse" href="/index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <br> 
+<!-------------------- placid logo banner --------------------> 
+    <div id="banner">
+            <a href="/index.html"><img class="logo" src="/Images/logo.png"></a>
+    </div>
+    
+    <br>
+    
+    <div id="indexPage">
+        <div class = "grid-container-index">
+
+            <!-------------------- brief introduction -------------------->   
+            <div id="intro">
+                <table id="description">
+                    <th>About Placid</th>
+                        <tr><td>Placid is an independent magazine created to advocate for the theme of Slow Living, with a mission to add a touch of calm to individuals who are struck by the effects of world issues amidst the already hectic life. At the same time, the magazine also hopes to contribute to efforts against the deteriorating health of Gaia.</td></tr>
+                        <tr><td>Slow Living, like its name, is a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace.</td></tr>
+                        <tr><td>We hope this online magazine would help broaden perspectives and lend a helping hand amidst the global pandemic.</td></tr>
+                </table>
+            </div>
+
+            <br>
+
+            <!---------------------- featured topics ----------------------> 
+            <h1 class="sectionTitle">FEATURED</h1>
+            <section id="featured">        
+                <article class="featuredPost">
+                    <div class="features">
+                        <a href="environment.html">
+                            <div class="media"><img src="/Images/environment/env-header.jpg" alt="Environment Feature"></div>
+                            <div class="caption">The Rise Of Sustainable Fashion Amidst The Pandemic</div>
+                            <div class="author">by Tan</div>
+                            <div class="readMore">Click to Read more</div>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="featuredPost">
+                    <div class="features">
+                        <a href="art.html">
+                            <div class="media"><img src="/Images/art/art-header.jpg" alt="Art Feature"></div>
+                            <div class="caption">The Artistic Journey of </div>
+                            <div class="author">by Tan</div>
+                            <div class="readMore">Click to Read more</div>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="featuredPost">
+                    <div class="features">
+                        <a href="food.html">
+                            <div class="media"><img src="/Images/food/food-header.jpg" alt="Food Feature"></div>
+                            <div class="caption">A Healthier Lifestyle With Slow Food</div>
+                            <div class="author">by Tan</div>
+                            <div class="readMore">Click to Read more</div>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="featuredPost">
+                    <div class="features">
+                        <a href="home_living.html">
+                            <div class="media"><img src="/Images/home-living/hliving-header.jpg" alt="Home & Living Feature"></div>
+                            <div class="caption">Slow and Minimal Living in a Fast-paced World</div>
+                            <div class="author">by Tan</div>
+                            <div class="readMore">Click to Read more</div>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="featuredPost">
+                    <div class="features">
+                        <a href="news.html">
+                            <div class="media"><img src="/Images/news--/news-header.jpg" alt="News Feature"></div>
+                            <div class="caption">The Pandemic</div>
+                            <div class="author">by Tan</div>
+                            <div class="readMore">Click to Read more</div>
+                        </a>
+                    </div>
+                </article>  
+            </section>
+
+            <br>
+
+        <!---------------------- category ----------------------> 
+            <section id="categories">
+                <h1 class="sectionTitle">CATEGORY</h1>
+                <div class="catGrid">
+                    <a href="art.html">
+                        <div class="catTitle">ART</div>
+                    </a>
+                    <a href="environment.html">
+                        <div class="catTitle">ENVIRONMENT</div>
+                    </a>
+                    <a href="food.html">
+                        <div class="catTitle">FOOD</div>
+                    </a>
+                    <a href="home_living.html">
+                        <div class="catTitle">HOME / LIVING</div>
+                    </a>
+                    <a href="news.html">
+                        <div class="catTitle">NEWS</div>
+                    </a>
+                </div>
+            </section>
+
+            <br>
+
+        <!------------------- image carousel -------------------> 
+            <!-- https://www.w3schools.com/bootstrap/bootstrap_carousel.asp : adjustments made to div classes, images, addition of hyperlinks to other pages upon click -->
+            <div class="imageFiller">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!---- circular indicators ---->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+
+                <!---- wrapper for slides ---->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/Images/imageFill_1.jpg" alt="plant">
+                    </div>
+
+                    <div class="item">
+                        <a href="/home_living.html"><img src="/Images/home-living/hliving-header.jpg" alt="homeliving"></a>
+                    </div>
+
+                    <div class="item">
+                        <a href="/environment.html"><img src="/Images/environment/env-header.jpg" alt="environment"></a>
+                    </div>
+
+                    <div class="item">
+                    <a href="/art.html"><img src="/Images/art/art-2.jpg" alt="art"></a>
+                  </div>
+
+                    <div class="item">
+                    <a href="/food.html"><img src="/Images/food/food-6.jpg" alt="food"></a>
+                  </div>
+
+                    <div class="item">
+                    <a href="/news.html"><img src="/Images/news--/news-4.jpg" alt="news"></a>
+                  </div>
+                </div>
+
+                <!---- controls (left/right) ---->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            
+            <br>
+
+    <!------------------------ footer ------------------------> 
+            <section>
+                <footer>
+                    <div class="footer-grid-container">
+                        <div class="contacts" id="info">
+                            <div id="hotline">
+                                <h1>General Enquiries:</h1>
+                                    <p>Hotline: 1800 568 1326</p>
+                            </div>
+
+                            <div id="email">
+                                <p>Email: enquiries@placidmagazine.com</p>
+                            </div> 
+                        </div>
+
+                        <div class="about">
+                            <h1>Who are we?</h1>
+                            <p>Placid is an independent magazine created to advocate for the theme of Slow Living, with a mission to add a touch of calm to individuals who are struck by the effects of world issues amidst the already hectic life. At the same time, the magazine also hopes to contribute to efforts against the deteriorating health of Gaia.</p>
+                                <p>Slow Living, like its name, is a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace.
+                                We hope this online magazine would help broaden perspectives and lend a helping hand amidst the global pandemic.</p>
+                        </div>
+
+                        <!-- https://www.w3schools.com/howto/howto_css_social_media_buttons.asp : use of social media icons, changes made to adopt relevant hyperlinks -->
+                        <div class="contacts" id="socials">
+                            <h1>Follow us:</h1>
+                            <a href="https://www.instagram.com/placid_magazine/?igshid=1qcde3koj4ra9" class="fa fa-instagram"></a>
+                            <a href="https://twitter.com/placid_magazine?s=21" class="fa fa-twitter"></a>
+                        </div>
+                    </div>
+
+                    <div id="footerLogo">
+                        <a href="index.html">
+                        <img src="/Images/logo.png">
+                        </a>
+                    </div>
+                </footer>
+            </section>
+        </div>   
+    </div>
+</body>
+     <script src="/Script/script.js"></script>
+</html>

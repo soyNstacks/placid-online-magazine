@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="description" content="this is an online responsive magazine for slow living content"> 
+    <meta name="keywords" content="slow living, simple living, lifestyle, magazine, fashion, food, health, home decor, news, environment, singapore"> 
+    <meta name="author" content="placid"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="Main StyleSheet" type=text/css href="/StyleSheet/main.css">
+    <link rel="Icons Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="Font Stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap">
+</head>
+
+<body>
+
+<!---------------- back to top of page button ----------------> 
+    <div class="topPage">
+        <button id="topPagebtn" title="top of page" onclick="topOfPage()"><i class="arrow up"></i></button>
+        <div class="scrollDown"></div>
+        <div class="topButton"></div>
+    </div>
+ 
+<!------------------------ navigation ------------------------>
+        <nav> 
+<!---------------- hamburger menu ---------------->
+        <input type="checkbox" id="menuNav"/> 
+            <div id="navigation">
+                <ul>
+                <li>
+                    <label for="menuNav">               
+                        <span id="menuIcon" onclick="hamburgToggle()">
+                        <div class="barOne"></div> 
+                        <div class="barTwo"></div>
+                        <div class="barThree"></div>
+                        </span>
+                    </label>
+                        <div id="menulist">
+                        <ul>
+                            <li><a class="menulinks" href="/index.html">HOME</a></li>
+                            <li><a class="menulinks" href="/art.html">ART</a></li>
+                            <li><a class="menulinks" href="/environment.html">ENVIRONMENT</a></li>
+                            <li><a class="menulinks" href="/food.html">FOOD</a></li>
+                            <li><a class="menulinks" href="/home_living.html">HOME &amp; LIVING</a></li>
+                            <li><a class="menulinks" href="/news.html">NEWS</a></li> 
+                        </ul>
+                        </div>
+                </li>
+                </ul>
+                
+            </div>
+            
+<!----------- horizontal navigation bar ------------>        
+        <div id="main">
+            <ul class="topnav">
+                
+                <!----inc/dec of font size -----> 
+                <!-- https://www.coursera.org/learn/uol-web-development/lecture/SJumr/7-3-5-what-can-we-do-with-these-elements-when-we-have-them : adaption of javascript function and HTML with adjustments made to CSS -->
+                <li id="pickFontsize">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>       
+                    <span class="large" id="largeA">A</span>
+                </li>
+                
+                <!-- https://www.w3resource.com/ : adoption with changes made to input field, checkboxes, validating input fields -->
+                <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp : adaption with changes made to modal function of form, closing of form with 'X' -->
+                <div id="main-subscribeForm">
+                <li>
+                    <button class="subscribe" onclick="document.getElementById('subForm').style.display='block'">SUBSCRIBE</button>
+                </li>
+                    <div id="subForm" class="modalForm">
+                      <span onclick="document.getElementById('subForm').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                      <form class="modalForm-content" >
+                        <div class="subForm-container">
+                          <h1>SUBSCRIPTION FORM</h1>
+                          <p>(* Compulsory fields)</p>
+                          <hr>
+
+                          <div class="title">Title:  
+                                <input type="radio" name = "title" class="personalInfo" value="Mr" checked="checked"> Mr
+                                <input type="radio" name = "title" class="title" value="Mrs"> Mrs
+                                <input type="radio" name = "title" class="title" value="Mdm"> Mdm
+                                <input type="radio" name = "title" class="title" value="Ms"> Ms
+                                <input type="radio" name = "title" class="title" value="Prefer not to say"> Prefer not to say
+                        </div>
+
+
+                            <div class="inputfields">
+                          <label for="first-name"><b>First Name: </b></label>
+                          <input type="text" id ="firstName" placeholder="Enter First Name" name="first-name" required>
+
+                          <label for="last-name"><b>Last Name: </b></label>
+                          <input type="text" id ="lastName" placeholder="Enter Last Name" name="last-name" required>      
+
+                          <label for="email"><b>Email: </b></label>
+                          <input type="text" id ="email" placeholder="Enter Email" name="email" required>
+                            </div>
+
+                          <div class="chooseTopic">
+                            <p id="checkBoxHeader">
+                                *Topic of interest (you may select more than one) :  
+                                </p>
+
+                                  <input type="checkbox" name="sub-topic" class="sub-topic" value = "art"> Art <br />
+
+                                  <input type="checkbox" name="sub-topic" class="sub-topic" value = "Environment"> Environment <br />
+
+                                  <input type="checkbox" name="sub-topic" class="sub-topic" value = "Health Living"> Health &amp; Living <br />
+
+                                  <input type="checkbox" name="sub-topic" class="sub-topic" value = "Home Living"> Home &amp; Living <br />
+
+                                  <input type="checkbox" name="sub-topic" class="sub-topic" value = "Slow News"> News <br />
+                              </div>
+
+                          <p id="comboBoxHeader">
+                                *Receive updates via email : &nbsp &nbsp &nbsp
+
+                                  <select name="frequency-period" id="frequency-period" >
+                                    <option value=""></option>
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Bi-Annually">Bi-Annually</option>
+                                  </select>
+
+                                </p>
+
+
+
+                          <div class="endOfForm-buttons">
+                            <div class="button-grid"><button class="cancelbtn" type="button" onclick="document.getElementById('subForm').style.display='none'">Cancel</button>
+                                
+                                <input class="clearForm" type="reset" value="Reset">
+                                </div>
+                              <button class="submitbtn" type="button" onClick="check_formData()"> Submit </button>
+                          </div>
+
+                        </div>
+                      </form>
+                </div>
+                </div>
+                
+                <li><a class ="mainCollapse" href="/art.html">ART</a></li>
+                <li><a class ="mainCollapse" href="/environment.html">ENVIRONMENT</a></li>
+                <li><a class ="mainCollapse" href="/food.html">FOOD</a></li>
+                <li><a class ="mainCollapse" href="/home_living.html">HOME &amp; LIVING</a></li>
+                <li><a class ="mainCollapse" href="/news.html">NEWS</a></li>
+                
+                <li><a class="report" href="/report.html">REPORT</a></li>
+                
+                <li><a class ="mainCollapse" href="/index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+<!-------------------- placid logo banner --------------------> 
+    <div id="banner">
+        <a href="/index.html"><img class="logo" src="/Images/logo.png"></a>
+    </div>
+    <br>
+    
+    <!------------------- environment page -------------------> 
+    <div id="envPage"> 
+        <article>
+            <h1>The Rise of Slow Fashion Admist The Pandemic</h1>
+            <div class="article-grid-container">
+                <div class="headerImage">
+                    <img src="/Images/environment/env-header.jpg" class=article-head-img alt="sustainable fabric">
+                </div>    
+                
+                <div class="one">
+                    <div class="article-text">
+                        <section>
+                            <p>We have all heard of the news of clothing brands closing down physcial stores all around the globe in 2020, as the Covid-19 situation had (and still has) plans of its own. However, the unexpected happened. Small independent brands are thriving on online platforms, with a similar vision to help save planet Earth's environmental issues. In Singapore, there is a group of youngsters out on a mission to recycle, or rather upcycle, old clothes that would have ended up in the dumpsters without their effort. Firstly, what is slow fashion? Often confused with sustainable fashion, slow fashion refers to 
+                            </p>
+                                <p class="quote">" the rethinking of consumption habits to reduce purchasing brand new clothes. "</p>
+                            <p>When one really needs new items, this mindset advocates for second-hand items. On the other hand, sustainable fashion
+                            </p>
+                                <p class="quote">" achieves the goal of minimising negative impact to the environment and animals at every stage of the supply chain. "
+                                </p>
+                            <p>Although sustainable fashion helps reduce impact more so than slow fashion, the latter is still highly encouraged as baby steps are required in order to make a big change. 
+                            </p>
+                        </section>
+                    </div>
+                </div>
+                
+                <div class="two">
+                    <div class="article-image">
+                        <img src="/Images/environment/env-1.jpg" alt="thiccythrifts-bag">
+                    </div>
+                    <div class="article-text">
+                        <section>
+                            <p>Worn fabrics that do not fit into the current trends are constantly getting reworked into clothing that fulfil the hipsters' vibe. Armed with threads and needles, they help reduce textile waste by putting the 'brand new' clothes on sale via social media and online selling platforms like Instagram, Depop and Carousell. 
+                            </p>
+                                <p>DIY textile items are a major hit these days, with vintage and yarn-work occupying the top of the chart. Although most reworked shirts and trousers are made from old fabric, the prices are not as cheap as one might expect, albeit still affordable. The time and effort put into these work cannot be refuted once seen on the model. The exquisiteness and details expressed in the form of art have deeply moved the hearts and wallets of many. Aesthetic-wise, it has its own uniqueness. The best benefit is the minimised impact these clothes have on the environment.
+                                </p>
+                                    <p>One particular local online store that caught the eyes of Placid was 
+                                        <a href="https://www.instagram.com/thiccythrifts/?hl=en">"Thiccy Thrifts"</a>. 
+                                        Behind this ludicrous name are two young women, Olivia and Megan, who are both alumnis of School of The Arts (SOTA). They had similar views on certain thrift shops that strive mainly on hefty profits and found interest in starting up their own selling platform on Instagram. With substantial amount of clothes from their wardrobes and a creative angle came Thiccy Thrifts in late 2019. Being self-taught, Olivia and Megan often execute individual ideas for discussion and construcive critique. Despite a quiet start, the store saw a rise in interest in mid 2020 during the peak of Covid-19, also when cross-broder trading was restricted by lockdown rules. The brand mainly focuses on affordability on top of sustainability, rather than full-on revenue based.
+                                    </p>
+                                <p class="quote">"Purchasing fast fashion is associated with impulsiveness and a lack of awreness, or sadly, concern for the world around us. Hence, it is frowned upon for all those reasons, but on an individual level, suggests a lack of mindfulness"
+                                </p>
+                        </section>
+                    </div>
+                </div>
+                
+                <div class="three">  
+                    <div class="article-image">
+                        <img src="/Images/environment/env-2.jpg" class="imgOne">
+                        <img src="/Images/environment/env-3.png" class="imgTwo">
+                    </div>
+                    <div class="article-text">
+                        <section>
+                            <p>In a recent Q&amp;A on Instagram, the women gathered opnions for selected questions provided by their followers. One of them questioned the reason why fast fashion is frowned upon. According to Olivia and Megan, fast fashion refers to low-cost clothing that are mass produced on a global level. These 'fast-fashion' brands release new collections rapidly, often utilising poor quality materials and placing manufacture points in third world countries with cheap labour, including children. Unfortunately, this contributes the top two CO2 emissions amongst all industries in the world. The excessive use of meagrely-priced polyester accounts for a-third of all microplastic wastes. 
+                            Not forgetting to mention, the exploitation of children are hidden under a layer of promised golden opportunity to earn an income for their low-income family. Currently, Bangladeshi manufacturers are over a billion dollars in debt due to late minute cancellations by large retailers. Without any form of payment for the garments weaved and assemblied, the fabrics would be left to be discarded. When new trends emerge, these  factories and their underpaid employees can only abandon those clothes for the next mass production.  
+                            </p>
+                         </section>
+                    </div>
+                </div>  
+            
+                <div class="four">
+                    <div class="article-image">
+                        <img src="/Images/environment/env-4.png" alt="reworked">
+                    </div>
+                    <div class="article-text">
+                        <section>
+                            <p>Many like them managed to reduce waste yet gain a decent profit simultaneously. To find out more about their works, you can visit 
+                                <a href="https://www.instagram.com/thiccythrifts/?hl=en">@thiccythrifts</a> 
+                                on Instagram. 
+                            </p>
+                                <p>To read on about sustainable and slow fashion locally, head to <a href="https://www.susgain.com/">susGain's</a> 
+                                    
+                                <a href="https://www.susgain.com/blog/are-you-ready-for-a-fashion-revolution-your-guide-to-sustainable-fashion-in-singapore/">"Your guide to Sustainable Fashion in Singapore"</a>.
+                                </p>
+                        </section>
+                    </div>
+                </div>
+                
+                <div class="articleAuthor">
+                    <p>Written by Tan</p>
+                        <p>Sources: 
+                            <a href="https://www.susgain.com/blog/are-you-ready-for-a-fashion-revolution-your-guide-to-sustainable-fashion-in-singapore">SusGain</a>, 
+                            <a href="https://www.instagram.com/thiccythrifts/?hl=en">Thiccy Thrifts</a>
+                            <a href="https://www.instagram.com/wrkunderway/?hl=en">Wrkunderway</a>
+                        </p>
+                </div>
+            </div>
+        </article>  
+    </div>
+        
+    
+    <br>
+    
+<!---------------------- category ----------------------> 
+    <section id="categories">
+    <h1 class="sectionTitle">CATEGORY</h1>
+        <div class="catGrid">
+            <a href="art.html">
+                <div class="catTitle">ART</div>
+            </a>
+            <a href="environment.html">
+                <div class="catTitle">ENVIRONMENT</div>
+            </a>
+            <a href="food.html">
+                <div class="catTitle">FOOD</div>
+            </a>
+            <a href="home_living.html">
+                <div class="catTitle">HOME / LIVING</div>
+            </a>
+            <a href="news.html">
+                <div class="catTitle">NEWS</div>
+            </a>
+        </div>
+    </section>
+    
+           <br>
+    
+   <!------------------------ footer ------------------------> 
+    <section>
+        <footer>
+            <div class="footer-grid-container">
+                <div class="contacts" id="info">
+                    <div id="hotline">
+                        <h1>General Enquiries:</h1>
+                            <p>Hotline: 1800 568 1326</p>
+                    </div>
+
+                    <div id="email">
+                        <p>Email: enquiries@placidmagazine.com</p>
+                    </div> 
+                </div>
+
+                <div class="about">
+                    <h1>Who are we?</h1>
+                    <p>Placid is an independent magazine created to advocate for the theme of Slow Living, with a mission to add a touch of calm to individuals who are struck by the effects of world issues amidst the already hectic life. At the same time, the magazine also hopes to contribute to efforts against the deteriorating health of Gaia.</p>
+                        <p>Slow Living, like its name, is a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace.
+                        We hope this online magazine would help broaden perspectives and lend a helping hand amidst the global pandemic.</p>
+                </div>
+
+                <!-- https://www.w3schools.com/howto/howto_css_social_media_buttons.asp : use of social media icons, changes made to adopt relevant hyperlinks -->
+                <div class="contacts" id="socials">
+                    <h1>Follow us:</h1>
+                    <a href="https://www.instagram.com/placid_magazine/?igshid=1qcde3koj4ra9" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/placid_magazine?s=21" class="fa fa-twitter"></a>
+                </div>
+            </div>
+
+            <div id="footerLogo">
+                <a href="index.html">
+                <img src="/Images/logo.png">
+                </a>
+            </div>
+        </footer>
+    </section>
+    
+</body>  
+    <script src="/Script/script.js"></script>
+</html>

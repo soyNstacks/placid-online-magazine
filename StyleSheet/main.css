@@ -1,0 +1,1299 @@
+/*mobile, small devices -------------------------------------*/ 
+@media only screen and (min-width: 320px) and (max-width: 750px) {
+    
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        
+        font-size: 14px;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        overflow: auto;
+        margin: 3px;
+    }
+
+    footer {
+        font-size: 90%;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        margin-bottom: 20px;
+        background: #d6c2c2;
+        width: 100%;
+        position: relative;
+        clear: both;
+        bottom: 10px;
+        
+    }
+    
+    .footer-grid-container {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        display: grid;
+        margin: auto;
+        bottom: 5px;
+        clear: both;
+        grid-row-gap: 5px;
+        
+    }
+
+    #main .mainCollapse {
+        display: none;
+    
+    }
+    
+    #main .subscribe {
+        background-color: #F5F5F5;
+        border: 2px solid black;
+        color: black;
+        padding: 10px 16px 10px 16px;
+    
+    }
+    
+    #main .subscribe a:hover {
+        background-color: #F5F5F5;
+        cursor: pointer;
+    }
+    
+    #pickFontsize {
+        padding: 10px 15px 10px 15px;
+        
+    }
+    
+    #main .report {
+        background-color: #F5F5F5;
+        color: black;
+        padding: 10px 16px 10px 16px;
+    }
+    
+    .topnav { 
+        list-style-type: none;
+        overflow: visible;
+        position: relative;
+        color: black;
+        width: auto;
+        float: right;
+        align-content: center;
+        text-align: center;
+        background-color: (255, 255, 255, 0.0);
+        display: inline-grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
+        grid-row-gap: 3px;
+        
+    }
+    
+    #categories .catGrid{
+        max-width: 100%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-column-gap: 10px; 
+    }
+
+}
+
+/*mobile, tablet, other devices -------------------------------------*/ 
+@media only screen and (min-width: 751px) and (max-width: 1010px) {
+    
+    html {
+        font-size: 16px;
+    }
+    
+    body {
+        font-size: 16px;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        overflow: auto;
+        margin: 5px;
+    }
+
+    footer {
+        font-size: 90%;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        margin-bottom: 20px;
+        background: #d6c2c2;
+        width: 100%;
+        position: relative;
+        clear: both;
+        bottom: 10px;
+    }
+    
+    .footer-grid-container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        display: grid;
+        margin: auto;
+        bottom: 5px;
+        clear: both;
+        grid-row-gap: 5px;
+    }
+    
+    #main .mainCollapse {
+        display: none;
+    
+    }
+    
+    #main .subscribe {
+        background-color: #F5F5F5;
+        border: 2px solid black;
+        color: black;
+        padding: 10px 16px 10px 16px;
+    
+    }
+    
+    #main .subscribe a:hover {
+        background-color: #F5F5F5;
+        cursor: pointer;
+    }
+    
+    #pickFontsize {
+        padding: 10px 15px 10px 15px;
+        
+    }
+    
+    #main .report {
+        background-color: #F5F5F5;
+        color: black;
+        padding: 10px 16px 10px 16px;
+    }
+    
+    .topnav { 
+        list-style-type: none;
+        overflow: visible;
+        position: relative;
+        color: black;
+        width: auto;
+        float: right;
+        align-content: center;
+        text-align: center;
+        background-color: (255, 255, 255, 0.0);
+        display: inline-grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto; 
+        grid-row-gap: 3px;
+        
+    }
+    
+    #categories .catGrid{
+        max-width: 100%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: auto;
+        grid-column-gap: 10px; 
+    }
+
+}
+    
+
+/*desktop ----------------------------------------------------*/
+@media only screen and (min-width: 1011px) {
+    html {
+        font-size: 18px;
+    }
+    
+    body {
+        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        overflow: auto;
+        margin: 5px;
+    }
+
+    footer {
+        font-size: 90%;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        margin-bottom: 20px;
+        background: #d6c2c2;
+        width: 100%;
+        position: relative;
+        clear: both;
+        bottom: 10px;
+    }
+    
+    .footer-grid-container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        display: grid;
+        margin: auto;
+        bottom: 5px;
+        clear: both;
+        grid-row-gap: 5px;
+    }
+    
+    .topnav { 
+        list-style-type: none;
+        background-color: #F5F5F5;
+        position: relative;
+        color: black;
+        width: 88%;
+        float: right;
+        align-content: center;
+        text-align: center;
+        flex-flow: row nowrap;
+
+    }
+
+    #main .report {
+
+    }
+
+    #main li {
+        float: right;
+        padding-left: 12px;
+        padding-right: 12px;
+        z-index: 1;
+        text-align: center;
+        text-align: center;
+    }
+
+    #main a {
+        display: block; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        text-align: center;
+        float: right; 
+        text-align: center;
+    }
+
+    #main a:hover {
+        text-decoration: none;
+        background-color: #d6c2c2;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    #main .subscribe {
+        background-color: #F5F5F5;
+        border: 2px solid black;
+        color: black;
+        cursor: pointer;
+        padding: 12px 16px 12px 16px;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    #categories .catGrid{
+        max-width: 100%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: auto;
+        grid-column-gap: 10px; 
+    }
+
+    .topnav { 
+        list-style-type: none;
+        background-color: #F5F5F5;
+        position: relative;
+        color: black;
+        width: 88%;
+        float: right;
+        align-content: center;
+        text-align: center;
+        flex-flow: row nowrap;
+
+    }
+
+    #main .report {
+
+    }
+
+    #main li {
+        float: right;
+        padding-left: 12px;
+        padding-right: 12px;
+        z-index: 1;
+        text-align: center;
+    }
+
+    #main a {
+        display: block; 
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        text-align: center;
+        float: right; 
+
+    }
+
+    #main a:hover {
+        text-decoration: none;
+        background-color: #d6c2c2;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    #main .subscribe {
+        background-color: #F5F5F5;
+        border: 2px solid black;
+        color: black;
+        cursor: pointer;
+        padding: 12px 16px 12px 16px;
+        font-family: 'Raleway', sans-serif;
+    }
+}
+
+/*index.html css -------------------------------------------------------------*/
+/*common css --------------------------------------------------------*/ 
+#indexPage .grid-container-index {
+        display: grid;
+        grid-template-rows: auto auto auto auto auto;
+        grid-row-gap: 10px;        
+        margin: 20px;
+        grid-row-gap: 15px;
+        margin-bottom: 0;
+        
+    }
+
+/* brief introduction segment --------------*/
+#intro {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #ebe0e0;
+    border: 2px dashed #d6c2c2;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+#intro table {
+    width: 60%;
+
+}
+
+#intro th {
+    text-align: center;
+    padding-bottom: 28px;
+}
+
+#intro td {
+    text-align: center;
+    padding-bottom: 22px;
+}
+
+.sectionTitle {
+    font-size: 1.1em;  
+    text-align: left;
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+/*mobile, small devices -------------------------------------*/ 
+@media only screen and (min-width: 320px) and (max-width: 750px) {
+#featured {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: auto auto auto auto auto;
+        grid-auto-flow: dense;
+        grid-gap: 12px;
+        padding: 5px;
+        position: relative;
+    }
+    
+    .features a {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        display: inline-grid;
+    }
+    
+}
+
+/*mobile, tablet, other devices ---------------------*/    
+@media only screen and (min-width: 751px) and (max-width: 1010px) {
+        
+    #featured {
+        grid-template-columns: auto auto auto auto auto;
+        grid-auto-rows: 300px;
+        grid-gap: 12px;
+        position: relative;
+        display: grid;
+        width: 100%;
+    }
+    
+    .features a {
+        display: inline-grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+    }
+}
+
+/*desktop --------------------------------------*/
+@media only screen and (min-width: 1011px) {
+        #featured {
+        grid-template-columns: auto auto auto auto auto;
+        grid-auto-rows: 300px;
+        grid-gap: 12px;
+        position: relative;
+        display: grid;
+        width: 100%;
+        padding-bottom: 6px;
+    }
+    
+    .features a {
+        display: inline-grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+    }
+    
+}
+
+/* 'featured' section ------------------*/
+    .features .media img {
+        align-content: center;
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        flex: 1 1 auto;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .features {
+        position: relative;
+        text-align: left;
+        color: black;
+        width: 100%;
+
+    }
+
+    .features a {
+        text-decoration: none;
+        color: black;
+
+    }
+
+    .features a:hover {
+        color: #d6c2c2;
+        padding: 12px;
+        position: relative;
+    }
+
+    .features .caption {
+        padding-top: 10px;
+        padding-right: 20px;
+        font-size: 0.9em;
+        color: #3b3939;
+    }
+
+    .features .author {
+        padding-top: 3px;
+        font-style: italic;
+        font-size: 0.8em;
+        color: #575656;
+    }
+
+    .features .readMore{
+        padding-top: 3px;
+        font-style: italic;
+        font-size: 0.7em;
+        font-style: italic;
+        text-decoration: underline;
+
+    }
+    
+/* image carousel -------------------*/
+    .imageFiller .item active img {
+    width: 100%;
+    position: relative;
+        
+    }
+    
+    .imageFiller {
+        width: 100%;
+        margin-bottom: 20px;
+        align-content: center;
+        padding: 5px;
+    }
+
+
+/* Overall common css ----------------------------------------------------*/
+/* navigation menu icon ------------------*/
+nav {
+    margin: 10px;
+
+}
+
+#navigation {
+    display: block;
+    background-color: rgb(0, 0, 0, 0.0);
+    text-align: left;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    float: left;
+    position: fixed;
+    z-index: 100;            
+
+}
+
+#navigation li {      
+    list-style-type: none;
+    position: fixed;
+}
+
+#navigation ul li ul {
+    display: none;
+    padding-top: 30px;
+    position: fixed;
+}
+
+#menuNav {
+    display: none;
+    position: fixed;
+
+}
+
+#menuNav:checked + #navigation ul li ul {
+    display: block;
+    background-color: rgb(255, 255, 255, 1.0);
+    padding-right: 40px;
+    padding-bottom: 30px;
+    border-radius: 3px;
+
+}
+
+#menulist li, a {
+    padding: 10px 0px 10px 0px;
+    text-decoration: none;
+    color: black;
+    position: sticky;
+
+}
+
+#menulist a:hover {
+    text-decoration: underline 2px #d6c2c2;
+}
+
+#menuIcon {
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+.barOne, .barTwo, .barThree {
+    width: 32px;
+    height: 5px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+    border-radius: 5px;
+
+}
+
+.transformation .barOne {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-7px, 6px);
+
+}
+
+.transformation .barTwo {
+    opacity: 0.0;
+
+}
+
+.transformation .barThree {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+
+}
+
+/* font size adjuster in horizontal nav bar -----*/
+#pickFontsize {
+    padding: 10px 15px 10px 15px;
+
+}
+
+.small {
+    font-size: 0.6em;
+
+}
+
+.medium {
+    font-size: 1em;
+
+}
+
+.large {
+    font-size: 1.4em;
+
+}
+
+#smallA, #mediumA, #largeA {
+    cursor: pointer;
+}
+
+/* logo -------------------------*/
+#banner {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center; 
+}
+
+#banner img {
+    position: relative;
+    width: 70%;
+
+}
+
+#banner a {
+    width: auto;
+    max-height: 200px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* category selection --------------*/
+#categories {
+    margin: 5px;
+    position: relative;
+}
+
+#categories .catTitle {
+    text-align: center;
+    padding: 4px;
+    border: 1.8px solid black;
+    padding: 8px;
+    border-spacing: 10px;
+}
+
+#categories a {
+    text-decoration: none;
+    color: black;
+}
+
+#categories a:hover {
+    opacity: 0.6;
+    background: #d6c2c2;
+
+}
+
+/*--------- modal subscription form, closes when 'x' is clicked -------*/
+#main-subscribeForm .subForm-container {
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+}
+
+#main-subscribeForm .modalForm {
+    display: none; 
+    position: fixed; 
+    z-index: 3; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: #d6c2c2;
+    padding-top: 50px;
+
+}
+
+#main-subscribeForm .modalForm-content {
+    background-color: #fefefe;
+    margin: 10% auto 10% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+#main-subscribeForm hr {
+    border: 1px solid #f2f2f2;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+#main-subscribeForm .close {
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+
+#main-subscribeForm .close:hover, .close:focus {
+    color:  #ffffb3;
+    cursor: pointer;
+}
+
+
+#main-subscribeForm .inputfields {
+    display: inline-grid;
+    grid-template-columns: 10% 80%;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    grid-column-gap: 30px;
+    padding: 15px 5px 15px 2px;
+}
+
+#main-subscribeForm input[type=text] {
+    width: 100%;
+    border: none;
+    background: #f2f2f2;
+    padding: 15px;
+    margin: 5px 0px 22px 0px;
+    display: inline-block;
+}
+
+#main-subscribeForm input[type=text]:focus {
+    background-color: #e6e6e6;
+    outline: none;
+}
+
+#main-subscribeForm .chooseTopic .sub-topic {
+    padding: 5px 0px 5px 0px;
+}
+
+#main-subscribeForm #comboBoxHeader {
+    padding: 15px 0px 15px 0px;
+}
+
+#main-subscribeForm button:hover {
+    opacity: 1;
+
+}
+
+/* buttons on form --------------*/
+#main-subscribeForm .cancelbtn, #main-subscribeForm .clearForm {
+    width: 100%;
+    padding: 14px 15px;
+    background: #f2f2f2;
+    border: 2px solid #d6c2c2;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#main-subscribeForm .submitbtn {
+    width: 100%;
+    padding: 14px 15px;
+    margin-top: 10px;
+    background: #f2f2f2;
+    border: 2px solid #d6c2c2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#main-subscribeForm .button-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
+    width: 100%;
+}
+
+#main-subscribeForm .endOfForm-buttons::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+} 
+
+/*--------------------- footer ---------------------*/
+#footerLogo img {
+    width: 100px;
+    height: auto;
+    float: left;
+    bottom: 5px;
+    display: flex;
+}
+
+.contacts h1, .about h1 {
+    font-size: 1.1em;
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    font-style: italic;
+}
+
+.contacts p, .about p {
+    padding: 0;
+
+}
+
+.contacts, .about{
+    margin: 8px;
+}
+
+/* social media icons --------------*/
+#socials .fa {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 13%;
+    width: auto;
+}
+
+#socials .fa:hover {
+    opacity: 0.7;
+}
+
+#socials .fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+#socials .fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+/* button that goes back to top of page when clicked --------------*/
+#topPagebtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 28px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #F5F5F5;
+    color: white;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 17px 17px 10px 17px;
+
+    }
+
+
+/*common css for articles (art.html / environment.html / news--.html / food.html / home_living.html) --------- */   
+/*margin, border for pages ------------------------------- */ 
+#envPage, #artPage, #newsPage, #foodPage, #hlivingPage {
+   border: 3px solid #d6c2c2;
+   position: relative;
+   margin: 2px;
+}
+
+/*head image ------------------------------- */ 
+.article-grid-container .headerImage {
+    position: relative;
+    width: 99%;
+}
+
+.article-head-img {
+    width: 100%;
+    position: relative;
+}
+
+/*article title ------------------------------- */ 
+#envPage h1, #artPage h1, #newsPage h1, #foodPage h1, #hlivingPage h1 {
+    text-align: center;
+}
+
+/*article text ------------------------------- */ 
+.article-text {
+    text-align: center;
+
+}
+
+.article-text a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #8a5c5c;
+}
+
+.article-text a:hover {
+    text-decoration: none;
+    color: #d6c2c2;
+}
+
+/*article image ------------------------------- */ 
+.article-image {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    padding-bottom: 10px;
+
+}
+
+/*article quoted text ------------------------------- */ 
+.quote {
+    font-size: 1.4em;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    width: 90%;
+    padding: 10px;
+    background-color: #fff8e6;
+    border: 2px dashed #d6c2c2;
+    border-radius: 2px;
+    display: inline-flex;
+    justify-content: center;
+}
+
+/* author, sources of articles with hyperlinks --------------- */ 
+.articleAuthor {
+    font-size: 0.8em;
+    bottom: 0px;
+    text-align: left;
+    padding-top: 30px;
+}
+
+.articleAuthor a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #8a5c5c;
+}
+
+.articleAuthor a:hover {
+    text-decoration: none;
+    color: #d6c2c2;
+}
+
+.one, .two, .three, .four {
+    width: 99%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/*-----------------environment page-----------------*/
+#envPage .article-grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    display: grid;
+    margin: 20px;
+    grid-row-gap: 15px;
+    margin-bottom: 0;
+}
+
+#envPage .two img {
+    width: 45%;
+    position: relative;
+    max-height: auto;
+
+}
+
+#envPage .three .article-image {
+    width: 99%;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+    grid-template-rows: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#envPage .three .article-image .imgOne {
+    width: 40%;
+    max-height: auto;
+}
+
+#envPage .three .article-image .imgTwo {
+    width: 40%;
+    max-height: auto;
+
+}
+
+#envPage .four .article-image img {
+    width: 60%;
+    max-height: auto;
+}
+
+/*-----------------home&living page-----------------*/
+#hlivingPage .article-grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    display: grid;
+    margin: 20px;
+    grid-row-gap: 15px;
+    margin-bottom: 0;
+}
+
+#hlivingPage .two .article-image img {
+    width: 65%;
+    position: relative;
+    padding: 8px;
+}
+
+#hlivingPage .three .article-image {
+    display: inline-grid;
+    grid-template-columns: 42% 33%;
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
+    width: 100%;
+}
+
+#hlivingPage .three .article-image .imgOne {
+    width: 100%;
+    position: relative;
+}
+
+#hlivingPage .three .article-image .imgTwo {
+    width: 100%;
+    position: relative;
+}
+
+/*----------------- food page -----------------*/
+#foodPage .article-grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    display: grid;
+    margin: 20px;
+    grid-row-gap: 15px;
+    margin-bottom: 0;
+}
+
+#foodPage .interview {
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+#foodPage .interview th {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#foodPage .interview td {
+    color: #262626;
+}
+
+#foodPage .two .article-image {
+    display: inline-grid;
+    grid-template-columns: 50% 43.8%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+}
+
+#foodPage .two .article-image .imgOne img {
+        width: 100%;
+
+}
+
+#foodPage .two .article-image .imgTwo img{
+        width: 100%;
+
+}
+
+#foodPage .three .article-image {
+    display: inline-grid;
+    grid-template-columns: 45% 43.3%;
+    grid-column-gap: 20px;
+    grid-template-rows: auto;
+}
+
+#foodPage .three .article-image .imgOne img {
+    width: 100%;
+    height: auto;
+}
+
+#foodPage .three .article-image .imgTwo img {
+    width: 100%;
+}
+
+#foodPage .four .article-image {
+    width: 100%;
+}
+
+#foodPage .four .article-image img{
+    width: 60%;
+    max-height: auto;
+
+}
+
+/*----------------- art page -----------------*/
+#artPage  .article-grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    display: grid;
+    margin: 20px;
+    grid-row-gap: 15px;
+    margin-bottom: 0;
+}
+
+#artPage  .two .article-image {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    display: flex;
+    justify-content: center;
+    grid-column-gap: 20px;
+    padding-bottom: 15px;
+}
+
+#artPage .two .article-image .imgOne {
+    width: 40%;
+    max-height: auto;
+}
+
+#artPage .two .article-image .imgTwo {
+    width: 45%;
+    max-height: auto;
+}
+
+#artPage .three .article-image {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+    grid-template-rows: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#artPage .three .article-image .imgOne {
+    width: 55%;
+    height: auto;
+}
+
+#artPage  .three .article-image .imgTwo {
+    width: 30%;
+    height: auto;
+}
+
+#artPage .four .article-image {
+    width: 100%;
+}
+
+#artPage .four .article-image img {
+    width: 80%;
+}
+
+/*----------------- news page ---------------------*/
+#newsPage  .article-grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    display: grid;
+    margin: 20px;
+    grid-row-gap: 15px;
+    margin-bottom: 0;
+}
+
+#newsPage .two .article-image {
+    display: inline-grid;
+    grid-template-columns: 60% 26.65%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+}
+
+#newsPage  .two .article-image .imgOne img {
+        width: 100%;
+}
+
+#newsPage  .two .article-image .imgTwo img {
+        width: 100%;
+}
+
+#newsPage  .three .article-image img {
+    width: 75%;
+}
+
+/*------- brief covid timeline on news.html ------*/
+#newsPage .timeline {
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 30px 0 10px 0;
+    position: relative;
+    width: 100%;
+    box-shadow: inset 0 -25px 20px -35px rgba(0, 0, 0, 1); 
+    z-index: 20;
+}
+
+#newsPage .content {
+    display: inline-block;
+    vertical-align: top;
+    background: #ebe0e0;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    border: 2px dashed #d6c2c2;
+    border-radius: 3px;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 300px;
+    position: relative;
+    white-space: pre-line;
+}
+
+#newsPage .content:after {
+    content: '';
+    background: #ebe0e0;
+    width: 7px;
+    height: 7px;
+    border-radius: 6px;
+    border: 3px solid #d6c2c2;
+    left: 50%;
+    top: -30px;
+    margin-left: -6px;
+    position: absolute;
+    display: block;
+}
+
+#newsPage .content:before {
+    content: '';
+    background: #d6c2c2;
+    width: 5px;
+    height: 20px;
+    left: 50%;
+    top: -20px;
+    margin-left: -2px;
+    display: block;
+    position: absolute;
+}
+
+#newsPage .content h1 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.05em;
+}
+
+#newsPage .content p {
+    letter-spacing: .15em;
+    margin-bottom: 8px;
+    font-size: 1em;
+
+}
+
+#newsPage .bar {
+    height: 5px;
+    background: #d6c2c2;
+    width: 100%;
+    border-radius: 4px;
+    top: 13px;
+    left: 0;
+    position: relative;
+}
+
+#newsPage .arrow {
+    border: solid grey;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+
+}
+
+#newsPage .left {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+#newsPage .timelineIns p {
+    text-align: left;
+    display: inline-block;
+    color: grey;
+    font-size: 1em;
+}

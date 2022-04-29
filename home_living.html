@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="description" content="this is an online responsive magazine for slow living content"> 
+    <meta name="keywords" content="slow living, simple living, lifestyle, magazine, fashion, food, health, home decor, news, environment, singapore"> 
+    <meta name="author" content="placid"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="Main StyleSheet" type=text/css href="/StyleSheet/main.css">
+    <link rel="Icons Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="Font StyleSheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap">
+</head>
+
+<body>
+<!---------------- back to top of page button ----------------> 
+    <div class="topPage">
+        <button id="topPagebtn" title="top of page" onclick="topOfPage()"><i class="arrow up"></i></button>
+        <div class="scrollDown"></div>
+        <div class="topButton"></div>
+    </div>
+ 
+<!------------------------ navigation ------------------------>
+    <nav> 
+<!---------------- hamburger menu ---------------->
+        <input type="checkbox" id="menuNav"/> 
+            <div id="navigation">
+                <ul>
+                    <li>
+                        <label for="menuNav">               
+                            <span id="menuIcon" onclick="hamburgToggle()">
+                            <div class="barOne"></div> 
+                            <div class="barTwo"></div>
+                            <div class="barThree"></div>
+                            </span>
+                        </label>
+                        
+                        <div id="menulist">
+                            <ul>
+                                <li><a class="menulinks" href="/index.html">HOME</a></li>
+                                <li><a class="menulinks" href="/art.html">ART</a></li>
+                                <li><a class="menulinks" href="/environment.html">ENVIRONMENT</a></li>
+                                <li><a class="menulinks" href="/food.html">FOOD</a></li>
+                                <li><a class="menulinks" href="/home_living.html">HOME &amp; LIVING</a></li>
+                                <li><a class="menulinks" href="/news.html">NEWS</a></li> 
+                            </ul>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+            
+<!----------- horizontal navigation bar ------------>        
+        <div id="main">
+            <ul class="topnav">
+                
+                <!----inc/dec of font size -----> 
+                <!-- https://www.coursera.org/learn/uol-web-development/lecture/SJumr/7-3-5-what-can-we-do-with-these-elements-when-we-have-them : adaption of javascript function and HTML with adjustments made to CSS -->
+                <li id="pickFontsize">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>       
+                    <span class="large" id="largeA">A</span>
+                </li>
+                
+                <!-- https://www.w3resource.com/ : adoption with changes made to input field, checkboxes, validating input fields -->
+                <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp : adaption with changes made to modal function of form, closing of form with 'X' -->
+                <div id="main-subscribeForm">
+                    <li>
+                        <button class="subscribe" onclick="document.getElementById('subForm').style.display='block'">SUBSCRIBE</button>
+                    </li>
+                    
+                    <div id="subForm" class="modalForm">
+                        <span onclick="document.getElementById('subForm').style.display='none'" class="close" title="Close Modal">&times;  
+                        </span>
+                        
+                        <form class="modalForm-content" >
+                            <div class="subForm-container">
+                                <h1>SUBSCRIPTION FORM</h1>
+                                <p>(* Compulsory fields)</p>
+                                <hr>
+
+                                <div class="title">Title:  
+                                    <input type="radio" name = "title" class="personalInfo" value="Mr" checked="checked"> Mr
+                                    <input type="radio" name = "title" class="title" value="Mrs"> Mrs
+                                    <input type="radio" name = "title" class="title" value="Mdm"> Mdm
+                                    <input type="radio" name = "title" class="title" value="Ms"> Ms
+                                    <input type="radio" name = "title" class="title" value="Prefer not to say"> Prefer not to say
+                                </div>
+                                <div class="inputfields">
+                                    <label for="first-name"><b>First Name: </b></label>
+                                        <input type="text" id ="firstName" placeholder="Enter First Name" name="first-name" required>
+
+                                    <label for="last-name"><b>Last Name: </b></label>
+                                        <input type="text" id ="lastName" placeholder="Enter Last Name" name="last-name" required>      
+
+                                    <label for="email"><b>Email: </b></label>
+                                        <input type="text" id ="email" placeholder="Enter Email" name="email" required>
+                                </div>
+
+                                <div class="chooseTopic">
+                                    <p id="checkBoxHeader">
+                                        *Topic of interest (you may select more than one) :  
+                                    </p>
+
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "art"> Art <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Environment"> Environment <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Health Living"> Health &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Home Living"> Home &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Slow News"> News <br>
+                                </div>
+
+                                    <p id="comboBoxHeader">
+                                    *Receive updates via email: 
+
+                                        <select name="frequency-period" id="frequency-period">
+                                            <option value=""></option>
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="Bi-Annually">Bi-Annually</option>
+                                        </select>
+
+                                    </p>
+
+                                <div class="endOfForm-buttons">
+                                    <div class="button-grid">
+                                        <button class="cancelbtn" type="button" onclick="document.getElementById('subForm').style.display='none'">Cancel</button>
+                                
+                                        <input class="clearForm" type="reset" value="Reset">
+                                    </div>
+                                    
+                                    <button class="submitbtn" type="button" onClick="check_formData()"> Submit </button>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                
+                <li><a class ="mainCollapse" href="/art.html">ART</a></li>
+                <li><a class ="mainCollapse" href="/environment.html">ENVIRONMENT</a></li>
+                <li><a class ="mainCollapse" href="/food.html">FOOD</a></li>
+                <li><a class ="mainCollapse" href="/home_living.html">HOME &amp; LIVING</a></li>
+                <li><a class ="mainCollapse" href="/news.html">NEWS</a></li>
+                <li><a class="report" href="/report.html">REPORT</a></li>
+                <li><a class ="mainCollapse" href="/index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-------------------- placid logo banner --------------------> 
+    <div id="banner">
+        <a href="/index.html"><img class="logo" src="/Images/logo.png"></a>
+    </div>
+
+    <br>
+
+    <!--------------------- home&living page ---------------------> 
+    <div id="hlivingPage"> 
+        <article>
+            <h1>Slow and Minimal Living in a Fast-paced World</h1>
+            <div class="article-grid-container">
+                <div class="headerImage">
+                    <img src="/Images/home-living/hliving-header.jpg" class="article-head-img" alt="homeliving">
+                </div>   
+                
+                <div class="one">
+                    <div class="article-text">
+                        <section>
+                            <p>What is Slow Living? Slow Living is defined as </p>         
+                                <p class="quote">"a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace". 
+                                </p>
+                                    <p>It also incorporates the mindset of Simple and Minimal Living, both of which are characterised by individuals to being satisfied with what they have rather than want. A one-eighty change has been made when the Covid-19 pandemic happened in the blink of an eye. Appointments and plans were cancelled, even the most unpredictable working habits were forced to transform into a stay-home event. That might probably have also been the cause for an eye-opener to the clutters of mess in the area we call Home. There has been a visible rise in interest for slow lifestyle in the past year, so much that tips and tricks are seen everywhere on social platforms like Youtube, Instagram and Pinterest. This lifestyle has been hailed upon by many as an 'aesthetic by many that advocates for personal well-being in conjunction with minimal goods consumption. 
+                                    </p>
+                            </section>
+                        </div>
+                </div>
+                
+                <div class="two">
+                    <div class="article-image">
+                        <img src="/Images/home-living/hliving-4.png" alt="minimalDecor"> 
+                    </div>
+                    <div class="article-text">
+                        <section>
+                            <p>The first key element to slow living is going minimal. This can be activated in homes, with simple and less decor or storage. Recycle or donate items that are deemed unnecessary in your crib so that you can achieve minimalism, and at the same time, reduce wastage. 
+                            </p>
+                                <p>Calm and free the mind from the usual frenzy to adopt a slower approach in everyday life. Withdrawing from social media has been proven by like-minded people to cut down unwanted toxicity from strangers and acquaintances. Consuming too much glamour and idealism can be taxing on one's mental health. 
+                            </p>
+                                <p>Recently, there has been a 
+                                    <a href="https://theculturetrip.com/north-america/usa/articles/the-30-day-minimalism-challenge/">challenge</a>
+                                    well-recieved by many. It encourages minimal living by setting different goals to achieve in seven days. Our in-house editor at Placid had initially decided to join for the fun but ended up finding it surprisingly beneficial. 
+                                </p>
+                            </section>
+                    </div>
+                </div>
+                
+                <div class="three">   
+                    <div class="article-image">
+                        <img src="/Images/home-living/hliving-5.jpg" class="imgOne">
+                        <img src="/Images/home-living/hliving-6.jpg" class="imgTwo">
+                    </div>
+                    <div class="article-text">
+                        <section>
+                            <p>A slower approach can be in the form of savouring moments of life. Fresh coffee beans glistering from natural oils poured into a grinder, and out comes finely-sized brown coffee powder. Empty the powder into a cotton filter hitched on ceramic and heat. Water flows from the goose-necked kettle into the ceramic and pot in a consistent circular motion. As liquid drips into the fine china mug, the homely abode is filled with aromatic flavour of Brazilian coffee. The blank cotton canvas is left with a heap of drenched residue. A sip of the liquid in the china leaves a clear yet floral aftertaste. Picking up a Marie Kondo black and white book while relishing the distinctive fragrance of coffee... There a brand new day starts with a fresh mind and palate.  
+                            </p>
+                                <p>Slow lifestyle has made phenomenal changes, at gradual pace, to some people's lives in terms of habits, mental health as well as overall well-being. A stroll in the morning along the countryside rather than waking up from bed after half a day has passed and having missed appointments or tasks. Taking in the fresh air and doing self-reflection may improve one's mental health with positivity. Purchasing necessary items instead of splurging on temporary wants could also reduce wastage and uneeded expenses. Overall, there is a sense of 'cleansing' when a simpler lifestyle is adopted. 
+                                </p>
+                        </section>
+                    </div>
+                </div> 
+                
+                <div class="four">
+                    <div class="article-text">
+                        <section>
+                            <p>To find out more about slow and minimal living, visit 
+                                <a href="https://www.sloww.co/slow-living-101/">Sloww</a>. 
+                                To learn more about the community, head to <a href="https://www.reddit.com/r/simpleliving/">Simple Living</a> and  
+                                <a href="https://www.reddit.com/r/minimalism/">Minimalism</a> on Reddit.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+                    
+                <br>
+                    
+                <div class="articleAuthor">
+                    <p>Written by Tan</p>
+                        <p>Sources: <a href="https://www.sloww.co/slow-living-101/">Sloww</a>,
+                                    <a href ="https://vanillapapers.net/2019/02/20/slow-living-blog-quotes-trend/">Vanilla Papers</a>, 
+                                    <a href ="https://theculturetrip.com/north-america/usa/articles/the-30-day-minimalism-challenge/">The Culture Trip</a>
+                        </p>
+                </div>
+            </div>
+        </article>
+    </div>        
+
+    <br>
+<!---------------------- category ----------------------> 
+    <section id="categories">
+    <h1 class="sectionTitle">CATEGORY</h1>
+        <div class="catGrid">
+            <a href="art.html">
+                <div class="catTitle">ART</div>
+            </a>
+            <a href="environment.html">
+                <div class="catTitle">ENVIRONMENT</div>
+            </a>
+            <a href="food.html">
+                <div class="catTitle">FOOD</div>
+            </a>
+            <a href="home_living.html">
+                <div class="catTitle">HOME / LIVING</div>
+            </a>
+            <a href="news.html">
+                <div class="catTitle">NEWS</div>
+            </a>
+        </div>
+    </section>
+    
+           <br>
+    
+   <!------------------------ footer ------------------------> 
+    <section>
+        <footer>
+            <div class="footer-grid-container">
+                <div class="contacts" id="info">
+                    <div id="hotline">
+                        <h1>General Enquiries:</h1>
+                            <p>Hotline: 1800 568 1326</p>
+                    </div>
+
+                    <div id="email">
+                        <p>Email: enquiries@placidmagazine.com</p>
+                    </div> 
+                </div>
+
+                <div class="about">
+                    <h1>Who are we?</h1>
+                    <p>Placid is an independent magazine created to advocate for the theme of Slow Living, with a mission to add a touch of calm to individuals who are struck by the effects of world issues amidst the already hectic life. At the same time, the magazine also hopes to contribute to efforts against the deteriorating health of Gaia.</p>
+                        <p>Slow Living, like its name, is a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace.
+                        We hope this online magazine would help broaden perspectives and lend a helping hand amidst the global pandemic.</p>
+                </div>
+
+                <!-- https://www.w3schools.com/howto/howto_css_social_media_buttons.asp : use of social media icons, changes made to adopt relevant hyperlinks -->
+                <div class="contacts" id="socials">
+                    <h1>Follow us:</h1>
+                    <a href="https://www.instagram.com/placid_magazine/?igshid=1qcde3koj4ra9" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/placid_magazine?s=21" class="fa fa-twitter"></a>
+                </div>
+            </div>
+
+            <div id="footerLogo">
+                <a href="index.html">
+                <img src="/Images/logo.png">
+                </a>
+            </div>
+        </footer>
+    </section>
+    
+</body>    
+    <script src="/Script/script.js"></script>
+</html>

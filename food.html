@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="description" content="this is an online responsive magazine for slow living content"> 
+    <meta name="keywords" content="slow living, simple living, lifestyle, magazine, fashion, food, health, home decor, news, environment, singapore"> 
+    <meta name="author" content="placid"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="Main StyleSheet" type=text/css href="/StyleSheet/main.css">
+    <link rel="Icons StyleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="Font StyleSheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap">
+</head>
+
+<body>
+
+<!---------------- back to top of page button ----------------> 
+    <div class="topPage">
+        <button id="topPagebtn" title="top of page" onclick="topOfPage()"><i class="arrow up"></i></button>
+        <div class="scrollDown"></div>
+        <div class="topButton"></div>
+    </div>
+ 
+<!------------------------ navigation ------------------------>
+    <nav> 
+<!---------------- hamburger menu ---------------->
+        <input type="checkbox" id="menuNav"/> 
+            <div id="navigation">
+                <ul>
+                    <li>
+                        <label for="menuNav">               
+                            <span id="menuIcon" onclick="hamburgToggle()">
+                            <div class="barOne"></div> 
+                            <div class="barTwo"></div>
+                            <div class="barThree"></div>
+                            </span>
+                        </label>
+                        
+                        <div id="menulist">
+                            <ul>
+                                <li><a class="menulinks" href="/index.html">HOME</a></li>
+                                <li><a class="menulinks" href="/art.html">ART</a></li>
+                                <li><a class="menulinks" href="/environment.html">ENVIRONMENT</a></li>
+                                <li><a class="menulinks" href="/food.html">FOOD</a></li>
+                                <li><a class="menulinks" href="/home_living.html">HOME &amp; LIVING</a></li>
+                                <li><a class="menulinks" href="/news.html">NEWS</a></li> 
+                            </ul>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+            
+<!----------- horizontal navigation bar ------------>        
+        <div id="main">
+            <ul class="topnav">
+                
+                <!----inc/dec of font size -----> 
+                <!-- https://www.coursera.org/learn/uol-web-development/lecture/SJumr/7-3-5-what-can-we-do-with-these-elements-when-we-have-them : adaption of javascript function and HTML with adjustments made to CSS -->
+                <li id="pickFontsize">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>       
+                    <span class="large" id="largeA">A</span>
+                </li>
+                
+                <!-- https://www.w3resource.com/ : adoption with changes made to input field, checkboxes, validating input fields -->
+                <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp : adaption with changes made to modal function of form, closing of form with 'X' -->
+                <div id="main-subscribeForm">
+                    <li>
+                        <button class="subscribe" onclick="document.getElementById('subForm').style.display='block'">SUBSCRIBE</button>
+                    </li>
+                    
+                    <div id="subForm" class="modalForm">
+                        <span onclick="document.getElementById('subForm').style.display='none'" class="close" title="Close Modal">&times;  
+                        </span>
+                        
+                        <form class="modalForm-content" >
+                            <div class="subForm-container">
+                                <h1>SUBSCRIPTION FORM</h1>
+                                <p>(* Compulsory fields)</p>
+                                <hr>
+
+                                <div class="title">Title:  
+                                    <input type="radio" name = "title" class="personalInfo" value="Mr" checked="checked"> Mr
+                                    <input type="radio" name = "title" class="title" value="Mrs"> Mrs
+                                    <input type="radio" name = "title" class="title" value="Mdm"> Mdm
+                                    <input type="radio" name = "title" class="title" value="Ms"> Ms
+                                    <input type="radio" name = "title" class="title" value="Prefer not to say"> Prefer not to say
+                                </div>
+                                <div class="inputfields">
+                                    <label for="first-name"><b>First Name: </b></label>
+                                        <input type="text" id ="firstName" placeholder="Enter First Name" name="first-name" required>
+
+                                    <label for="last-name"><b>Last Name: </b></label>
+                                        <input type="text" id ="lastName" placeholder="Enter Last Name" name="last-name" required>      
+
+                                    <label for="email"><b>Email: </b></label>
+                                        <input type="text" id ="email" placeholder="Enter Email" name="email" required>
+                                </div>
+
+                                <div class="chooseTopic">
+                                    <p id="checkBoxHeader">
+                                        *Topic of interest (you may select more than one) :  
+                                    </p>
+
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "art"> Art <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Environment"> Environment <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Health Living"> Health &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Home Living"> Home &amp; Living <br>
+                                    <input type="checkbox" name="sub-topic" class="sub-topic" value = "Slow News"> News <br>
+                                </div>
+
+                                    <p id="comboBoxHeader">
+                                    *Receive updates via email: 
+
+                                        <select name="frequency-period" id="frequency-period">
+                                            <option value=""></option>
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="Bi-Annually">Bi-Annually</option>
+                                        </select>
+
+                                    </p>
+
+                                <div class="endOfForm-buttons">
+                                    <div class="button-grid">
+                                        <button class="cancelbtn" type="button" onclick="document.getElementById('subForm').style.display='none'">Cancel</button>
+                                
+                                        <input class="clearForm" type="reset" value="Reset">
+                                    </div>
+                                    
+                                    <button class="submitbtn" type="button" onClick="check_formData()"> Submit </button>
+                                </div>
+
+                        </div>
+                      </form>
+                </div>
+            </div>
+                
+                <li><a class ="mainCollapse" href="/art.html">ART</a></li>
+                <li><a class ="mainCollapse" href="/environment.html">ENVIRONMENT</a></li>
+                <li><a class ="mainCollapse" href="/food.html">FOOD</a></li>
+                <li><a class ="mainCollapse" href="/home_living.html">HOME &amp; LIVING</a></li>
+                <li><a class ="mainCollapse" href="/news.html">NEWS</a></li>
+                <li><a class="report" href="/report.html">REPORT</a></li>
+                <li><a class ="mainCollapse" href="/index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+<!-------------------- placid logo banner --------------------> 
+    <div id="banner">
+        <a href="/index.html"><img class="logo" src="/Images/logo.png"></a>
+    </div>
+    
+    <br>
+
+    <div id="foodPage"> 
+        <article>
+            <h1>A Healthier Lifestyle With Slow Food</h1>
+            <div class="article-grid-container">
+                <div class="headerImage">
+                    <img src="/Images/food/food-header.jpg" class="article-head-img" alt="header image">
+                </div>   
+                
+            <div class="one">
+                <div class="article-text">
+                    <section>
+                        <p>The pandemic has caused people all around the world to lose touch with usual routines, including eat habits. Although the food and beverage industry has been hit hard, business is gradually picking up for most, especially in countries that are in the midst of recovery. Hence, profit-driven food delivery companies release new inticing coupons every week to capture the hearts, or stomachs, of civilians who are looking to continue enjoying food at their crib to reduce the risk of contacting the virus when eating out. There is definitely an increase in junk food consumption during this period of time.  
+                        </p>
+                            <p class="quote">" an organisation and movement that promote local food and traditional cooking " 
+                            </p>
+                                <p>Slow Food aims to preserve traditional and regional cuisine and encourages the farming of plants, seeds and livestock characteristic of thhe local ecosystem. It is movement that opposes fast food, and focuses on quality rather than quantity. The organisation also advoactes responsible consumption.                         </p>
+                    </section>
+                </div>
+            </div>
+                
+            <div class="two">
+                <div class="article-image">
+                    <div class="imgOne">
+                        <img src="/Images/food/food-1.jpg" alt="fruits">
+                    </div>
+                    <div class="imgTwo">
+                        <img src="/Images/food/food-2.jpg">
+                    </div>
+                </div>
+                <div class="article-text">
+                    <section>
+                        <p>The first approach to Slow Food is consuming local produce or 'clean' food. Purchasing food from local suppliers is a way to not only lend a helping hand to struggling small-scale producers, but could also ensues a fresher and cleaner diet. Fresh food gain an edge over the proccessed packets on the aisles of supermarket in terms of nutritional value and the absence of chemicals. The origin of local produce is usually transparent to consumers unlike certain food that are manufactured behind closed doors in factories. Knowing where food on the table comes from is a major winning point as well.
+                        </p>    
+                            <p>Additionally, a clean diet takes in the factor of potential extinction in the ecosystem. In risk of being endangered, it was discovered in 2007 that honey bees , which pollinate some edible vegetables, suffered mass die-offs. In Europe, mortality rates were around 20%, while in the United States they reached over 40% during the 2013 to 2014 winter. The alarming figures made its way to the headlines years back and has also since been in the minds of many. Although not entirely proven, the harvesting of honey from beehives, which  essentially is equivalent to the destruction of habitats, could be a contributing factor to the death toll. Hence, the the mission of Slow Food may also help improve dire environment impact from man's activities despite it being an issue that takes small steps in the long run. 
+                            </p>
+                                <p>Secondly, another approach is to preserve heritage dishes. In Singapore, there exists a volunteer-run and non-profit organisation, Slow Food (Singapore). Registered withh Slow Food (International), the independent community here is working to promote and preserve Singapore's traditional food cultural heritage through its events and programs. 
+                                </p>
+                                <p>In an 
+                                    <a href="http://str.sg/4NRb">interview</a> 
+                                    with The Strait Times in 2016, President of Slow Food (Singapore), Daniel Chia, revealed some interesting opinions regarding the mission. Below is an extracted short questionnaire transcipt. 
+                                </p>     
+                                    <table class="interview">
+                                        <tr><th>Q: What is your definition of a local heritage eatery?</th></tr>
+                                        <tr><td>It is a place that has been in business here for at least 30 years and where the taste of the dishes brings you back in time.</td></tr>
+                                        <tr><td>Places that fit the bill include Hokkien restaurant Beng Thin Hoon Kee Restaurant in Raffles Place, Chinese restaurants Spring Court at Upper Cross Street and Dragon Phoenix Restaurant at Clarke Quay, and dimsum restaurant Red Star in Chin Swee Road.</td></tr>
+                                        
+                                        <br>
+                                        
+                                        <tr><th>Q: What is food to you?</th></tr>
+                                        <tr><td>I think of food mostly as an expression of culture. Each dish usually has an origin that was based on ingredients local to that place and was created in the context of local circumstances. </td></tr>
+                                        <tr><td>Eating is the consumption and absorption of not just the physical food and its nutrients, but also the culture it came from. </td></tr>
+                                        
+                                        <br>
+                                        
+                                        <tr><th>Q: How are your meals like these days?</th></tr>
+                                        <tr><td>Most of my meals are quick and functional.</td></tr>
+                                        <tr><td>I have slow meals only during dinner or when I am hanging out with friends for a meal on weekends.</td></tr>
+                                    </table>
+                    </section>
+                </div>
+            </div>
+                
+            <div class="three">   
+                <div class="article-image">
+                    <div class="imgOne">
+                        <img src="/Images/food/food-3.png">
+                    </div>
+                    <div class="imgTwo">
+                        <img src="/Images/food/food-4.png">
+                    </div>
+                </div>
+                <div class="article-text">
+                    <section>
+                        <p class="quote">" Good, clean and fair. "</p>
+                            <p>
+                                <a href="https://slowfood.sg/">Slow Food (Singapore)</a> 
+                                has a toggle engine that allows individuals to search for the cultural cuisine they have in mind and provides a range of options available. Despite having limited options to date, the organisation expects a rise in members with the recent rise in interest in Slow Living and Slow Food. It has also been actively adding new approved heritage food sites to their page in accordance to several notable events like 
+                                    <a href="https://slowfood.sg/kueh-appreciation-day/kueh-appreciation-day-2019/">'Kueh Appreciation Day'</a> 
+                                and <a href="https://slowfood.sg/programs/heritage-heroes/">'Heritage Hero Awards Programme'</a>.
+                                Striving towards the same goal, the community will certainly have sufficient resources to support their endeavours in time to come.
+                            </p>
+                    </section>
+                </div>
+            </div> 
+                
+            <div class="four">
+                <div class="article-image">
+                    <img src="/Images/food/food-5.jpg" alt="traditional food">
+                </div>
+                <div class="article-text">
+                    <section>
+                        <p>To find out more about Slow Food, visit 
+                            <a href="https://greenliving.lovetoknow.com/low-impact-living/what-is-slow-food-movement">Love to Know</a>. 
+                            To learn more about the community, head to <a href="https://slowfood.sg/">Slow Food (Singapore)</a>.
+                        </p>
+                    </section>
+                </div>
+            </div>
+                    
+            <br>
+            
+            <div class="articleAuthor">
+                <p>Written by Tan</p>
+                <p>Sources: 
+                    <a href="https://slowfood.sg/">Slow Food (Singapore)</a>, 
+                    <a href="https://en.wikipedia.org/wiki/Slow_Food">Wikipedia</a>, 
+                    <a href="https://www.straitstimes.com/lifestyle/food/eat-slowly">The Straits Times</a>,
+                    <a href="https://www.businesstimes.com.sg/lifestyle/food-drink/savouring-every-bite">Business Times</a>
+                </p>
+            </div>
+            </div>
+        </article>
+    </div>        
+
+    <br>
+        <!---------------------- category ----------------------> 
+    <section id="categories">
+    <h1 class="sectionTitle">CATEGORY</h1>
+        <div class="catGrid">
+            <a href="art.html">
+                <div class="catTitle">ART</div>
+            </a>
+            <a href="environment.html">
+                <div class="catTitle">ENVIRONMENT</div>
+            </a>
+            <a href="food.html">
+                <div class="catTitle">FOOD</div>
+            </a>
+            <a href="home_living.html">
+                <div class="catTitle">HOME / LIVING</div>
+            </a>
+            <a href="news.html">
+                <div class="catTitle">NEWS</div>
+            </a>
+        </div>
+    </section>
+    
+           <br>
+    
+   <!------------------------ footer ------------------------> 
+    <section>
+        <footer>
+            <div class="footer-grid-container">
+                <div class="contacts" id="info">
+                    <div id="hotline">
+                        <h1>General Enquiries:</h1>
+                            <p>Hotline: 1800 568 1326</p>
+                    </div>
+
+                    <div id="email">
+                        <p>Email: enquiries@placidmagazine.com</p>
+                    </div> 
+                </div>
+
+                <div class="about">
+                    <h1>Who are we?</h1>
+                    <p>Placid is an independent magazine created to advocate for the theme of Slow Living, with a mission to add a touch of calm to individuals who are struck by the effects of world issues amidst the already hectic life. At the same time, the magazine also hopes to contribute to efforts against the deteriorating health of Gaia.</p>
+                        <p>Slow Living, like its name, is a lifestyle that emphasises a slower approach to aspects of everyday life, and movements or actions at a relaxed pace.
+                        We hope this online magazine would help broaden perspectives and lend a helping hand amidst the global pandemic.</p>
+                </div>
+
+                <!-- https://www.w3schools.com/howto/howto_css_social_media_buttons.asp : use of social media icons, changes made to adopt relevant hyperlinks -->
+                <div class="contacts" id="socials">
+                    <h1>Follow us:</h1>
+                    <a href="https://www.instagram.com/placid_magazine/?igshid=1qcde3koj4ra9" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/placid_magazine?s=21" class="fa fa-twitter"></a>
+                </div>
+            </div>
+
+            <div id="footerLogo">
+                <a href="index.html">
+                <img src="/Images/logo.png">
+                </a>
+            </div>
+        </footer>
+    </section>
+    
+</body>    
+    <script src="/Script/script.js"></script>
+</html>
